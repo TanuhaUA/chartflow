@@ -1,0 +1,358 @@
+{
+  "colors": {
+    "$type": "color",
+    "$description": "Modern color palette for chart builder interface",
+    "primary": {
+      "$value": "#6366f1",
+      "$description": "Primary brand color for CTAs and key interactions"
+    },
+    "primaryHover": {
+      "$value": "#4f46e5",
+      "$description": "Primary color hover state"
+    },
+    "secondary": {
+      "$value": "#8b5cf6",
+      "$description": "Secondary accent color"
+    },
+    "background": {
+      "$value": "#ffffff",
+      "$description": "Main background color"
+    },
+    "backgroundSecondary": {
+      "$value": "#f8fafc",
+      "$description": "Secondary background for cards and panels"
+    },
+    "backgroundDark": {
+      "$value": "#0f172a",
+      "$description": "Dark theme background"
+    },
+    "backgroundDarkSecondary": {
+      "$value": "#1e293b",
+      "$description": "Dark theme secondary background"
+    },
+    "surface": {
+      "$value": "#ffffff",
+      "$description": "Surface color for cards and modals"
+    },
+    "surfaceDark": {
+      "$value": "#1e293b",
+      "$description": "Dark theme surface color"
+    },
+    "border": {
+      "$value": "#e2e8f0",
+      "$description": "Default border color"
+    },
+    "borderDark": {
+      "$value": "#334155",
+      "$description": "Dark theme border color"
+    },
+    "text": {
+      "primary": {
+        "$value": "#0f172a",
+        "$description": "Primary text color"
+      },
+      "secondary": {
+        "$value": "#64748b",
+        "$description": "Secondary text color"
+      },
+      "muted": {
+        "$value": "#94a3b8",
+        "$description": "Muted text color"
+      },
+      "inverse": {
+        "$value": "#ffffff",
+        "$description": "Text on dark backgrounds"
+      },
+      "darkPrimary": {
+        "$value": "#f1f5f9",
+        "$description": "Dark theme primary text"
+      },
+      "darkSecondary": {
+        "$value": "#cbd5e1",
+        "$description": "Dark theme secondary text"
+      }
+    },
+    "chart": {
+      "blue": {
+        "$value": "#3b82f6",
+        "$description": "Chart color - blue"
+      },
+      "green": {
+        "$value": "#10b981",
+        "$description": "Chart color - green"
+      },
+      "purple": {
+        "$value": "#8b5cf6",
+        "$description": "Chart color - purple"
+      },
+      "orange": {
+        "$value": "#f59e0b",
+        "$description": "Chart color - orange"
+      },
+      "red": {
+        "$value": "#ef4444",
+        "$description": "Chart color - red"
+      },
+      "teal": {
+        "$value": "#14b8a6",
+        "$description": "Chart color - teal"
+      },
+      "pink": {
+        "$value": "#ec4899",
+        "$description": "Chart color - pink"
+      },
+      "indigo": {
+        "$value": "#6366f1",
+        "$description": "Chart color - indigo"
+      }
+    },
+    "success": {
+      "$value": "#10b981",
+      "$description": "Success state color"
+    },
+    "warning": {
+      "$value": "#f59e0b",
+      "$description": "Warning state color"
+    },
+    "error": {
+      "$value": "#ef4444",
+      "$description": "Error state color"
+    }
+  },
+  "spacing": {
+    "$type": "dimension",
+    "$description": "Consistent spacing scale",
+    "xs": {
+      "$value": "4px",
+      "$description": "Extra small spacing"
+    },
+    "sm": {
+      "$value": "8px",
+      "$description": "Small spacing"
+    },
+    "md": {
+      "$value": "16px",
+      "$description": "Medium spacing"
+    },
+    "lg": {
+      "$value": "24px",
+      "$description": "Large spacing"
+    },
+    "xl": {
+      "$value": "32px",
+      "$description": "Extra large spacing"
+    },
+    "2xl": {
+      "$value": "48px",
+      "$description": "2x large spacing"
+    },
+    "3xl": {
+      "$value": "64px",
+      "$description": "3x large spacing"
+    }
+  },
+  "sizing": {
+    "$type": "dimension",
+    "$description": "Component sizing tokens",
+    "button": {
+      "sm": {
+        "$value": "32px",
+        "$description": "Small button height"
+      },
+      "md": {
+        "$value": "40px",
+        "$description": "Medium button height"
+      },
+      "lg": {
+        "$value": "48px",
+        "$description": "Large button height"
+      }
+    },
+    "input": {
+      "sm": {
+        "$value": "32px",
+        "$description": "Small input height"
+      },
+      "md": {
+        "$value": "40px",
+        "$description": "Medium input height"
+      },
+      "lg": {
+        "$value": "48px",
+        "$description": "Large input height"
+      }
+    },
+    "icon": {
+      "sm": {
+        "$value": "16px",
+        "$description": "Small icon size"
+      },
+      "md": {
+        "$value": "20px",
+        "$description": "Medium icon size"
+      },
+      "lg": {
+        "$value": "24px",
+        "$description": "Large icon size"
+      }
+    }
+  },
+  "radius": {
+    "$type": "dimension",
+    "$description": "Border radius tokens",
+    "sm": {
+      "$value": "4px",
+      "$description": "Small border radius"
+    },
+    "md": {
+      "$value": "8px",
+      "$description": "Medium border radius"
+    },
+    "lg": {
+      "$value": "12px",
+      "$description": "Large border radius"
+    },
+    "xl": {
+      "$value": "16px",
+      "$description": "Extra large border radius"
+    },
+    "full": {
+      "$value": "9999px",
+      "$description": "Full border radius for pills"
+    }
+  },
+  "typography": {
+    "$type": "typography",
+    "$description": "Typography scale for modern interface",
+    "heading": {
+      "xl": {
+        "$value": {
+          "fontFamily": "SF Pro Display",
+          "fontSize": "36px",
+          "fontWeight": 600,
+          "lineHeight": 1.2,
+          "letterSpacing": "-0.5px"
+        },
+        "$description": "Extra large heading"
+      },
+      "lg": {
+        "$value": {
+          "fontFamily": "SF Pro Display",
+          "fontSize": "30px",
+          "fontWeight": 600,
+          "lineHeight": 1.3,
+          "letterSpacing": "-0.25px"
+        },
+        "$description": "Large heading"
+      },
+      "md": {
+        "$value": {
+          "fontFamily": "SF Pro Display",
+          "fontSize": "24px",
+          "fontWeight": 600,
+          "lineHeight": 1.4,
+          "letterSpacing": "0px"
+        },
+        "$description": "Medium heading"
+      },
+      "sm": {
+        "$value": {
+          "fontFamily": "SF Pro Display",
+          "fontSize": "20px",
+          "fontWeight": 600,
+          "lineHeight": 1.4,
+          "letterSpacing": "0px"
+        },
+        "$description": "Small heading"
+      }
+    },
+    "body": {
+      "lg": {
+        "$value": {
+          "fontFamily": "SF Pro Text",
+          "fontSize": "18px",
+          "fontWeight": 400,
+          "lineHeight": 1.6,
+          "letterSpacing": "0px"
+        },
+        "$description": "Large body text"
+      },
+      "md": {
+        "$value": {
+          "fontFamily": "SF Pro Text",
+          "fontSize": "16px",
+          "fontWeight": 400,
+          "lineHeight": 1.5,
+          "letterSpacing": "0px"
+        },
+        "$description": "Medium body text"
+      },
+      "sm": {
+        "$value": {
+          "fontFamily": "SF Pro Text",
+          "fontSize": "14px",
+          "fontWeight": 400,
+          "lineHeight": 1.5,
+          "letterSpacing": "0px"
+        },
+        "$description": "Small body text"
+      }
+    },
+    "label": {
+      "md": {
+        "$value": {
+          "fontFamily": "SF Pro Text",
+          "fontSize": "14px",
+          "fontWeight": 500,
+          "lineHeight": 1.4,
+          "letterSpacing": "0px"
+        },
+        "$description": "Medium label text"
+      },
+      "sm": {
+        "$value": {
+          "fontFamily": "SF Pro Text",
+          "fontSize": "12px",
+          "fontWeight": 500,
+          "lineHeight": 1.4,
+          "letterSpacing": "0px"
+        },
+        "$description": "Small label text"
+      }
+    }
+  },
+  "shadow": {
+    "$type": "shadow",
+    "$description": "Modern shadow system",
+    "sm": {
+      "$value": {
+        "offsetX": "0px",
+        "offsetY": "1px",
+        "blur": "3px",
+        "spread": "0px",
+        "color": "#0000000d"
+      },
+      "$description": "Small shadow for subtle elevation"
+    },
+    "md": {
+      "$value": {
+        "offsetX": "0px",
+        "offsetY": "4px",
+        "blur": "12px",
+        "spread": "0px",
+        "color": "#00000014"
+      },
+      "$description": "Medium shadow for cards"
+    },
+    "lg": {
+      "$value": {
+        "offsetX": "0px",
+        "offsetY": "8px",
+        "blur": "24px",
+        "spread": "0px",
+        "color": "#0000001a"
+      },
+      "$description": "Large shadow for modals"
+    }
+  }
+}

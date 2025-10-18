@@ -1,0 +1,123 @@
+:root {
+  /* Colors */
+  --colors-primary: #6366f1;
+  --colors-primary-hover: #4f46e5;
+/*  --colors-secondary: #8b5cf6;*/
+/*  --colors-background: #ffffff;*/
+  --colors-background-secondary: #f8fafc;
+/*  --colors-background-dark: #0f172a;*/
+/*  --colors-background-dark-secondary: #1e293b;*/
+/*  --colors-surface: #ffffff;*/
+/*  --colors-surface-dark: #1e293b;*/
+/*  --colors-border: #e2e8f0;*/
+/*  --colors-border-dark: #334155;*/
+
+  /* Text */
+  --colors-text-primary: #0f172a;
+  --colors-text-secondary: #64748b;
+/*  --colors-text-muted: #94a3b8;*/
+/*  --colors-text-inverse: #ffffff;*/
+/*  --colors-text-dark-primary: #f1f5f9;*/
+/*  --colors-text-dark-secondary: #cbd5e1;*/
+
+/*  !* Chart colors *!*/
+  --colors-chart-blue: #3b82f6;
+/*  --colors-chart-green: #10b981;*/
+/*  --colors-chart-purple: #8b5cf6;*/
+/*  --colors-chart-orange: #f59e0b;*/
+/*  --colors-chart-red: #ef4444;*/
+/*  --colors-chart-teal: #14b8a6;*/
+/*  --colors-chart-pink: #ec4899;*/
+/*  --colors-chart-indigo: #6366f1;*/
+
+/*  --colors-success: #10b981;*/
+/*  --colors-warning: #f59e0b;*/
+/*  --colors-error: #ef4444;*/
+
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+  --spacing-3xl: 64px;
+
+/*  !* Sizing *!*/
+/*  --sizing-button-sm: 32px;*/
+/*  --sizing-button-md: 40px;*/
+/*  --sizing-button-lg: 48px;*/
+/*  --sizing-input-sm: 32px;*/
+/*  --sizing-input-md: 40px;*/
+/*  --sizing-input-lg: 48px;*/
+/*  --sizing-icon-sm: 16px;*/
+/*  --sizing-icon-md: 20px;*/
+/*  --sizing-icon-lg: 24px;*/
+
+  /* Radius */
+/*  --radius-sm: 4px;*/
+  --radius-md: 8px;
+/*  --radius-lg: 12px;*/
+/*  --radius-xl: 16px;*/
+/*  --radius-full: 9999px;*/
+
+/*  !* Typography *!*/
+/*  --typography-heading-xl-font-family: 'SF Pro Display';*/
+/*  --typography-heading-xl-font-size: 36px;*/
+/*  --typography-heading-xl-font-weight: 600;*/
+/*  --typography-heading-xl-line-height: 1.2;*/
+/*  --typography-heading-xl-letter-spacing: -0.5px;*/
+
+/*  --typography-heading-lg-font-family: 'SF Pro Display';*/
+/*  --typography-heading-lg-font-size: 30px;*/
+/*  --typography-heading-lg-font-weight: 600;*/
+/*  --typography-heading-lg-line-height: 1.3;*/
+/*  --typography-heading-lg-letter-spacing: -0.25px;*/
+
+/*  --typography-heading-md-font-family: 'SF Pro Display';*/
+/*  --typography-heading-md-font-size: 24px;*/
+/*  --typography-heading-md-font-weight: 600;*/
+/*  --typography-heading-md-line-height: 1.4;*/
+/*  --typography-heading-md-letter-spacing: 0px;*/
+
+/*  --typography-heading-sm-font-family: 'SF Pro Display';*/
+/*  --typography-heading-sm-font-size: 20px;*/
+/*  --typography-heading-sm-font-weight: 600;*/
+/*  --typography-heading-sm-line-height: 1.4;*/
+/*  --typography-heading-sm-letter-spacing: 0px;*/
+
+/*  --typography-body-lg-font-family: 'SF Pro Text';*/
+/*  --typography-body-lg-font-size: 18px;*/
+/*  --typography-body-lg-font-weight: 400;*/
+/*  --typography-body-lg-line-height: 1.6;*/
+/*  --typography-body-lg-letter-spacing: 0px;*/
+
+/*  --typography-body-md-font-family: 'SF Pro Text';*/
+/*  --typography-body-md-font-size: 16px;*/
+/*  --typography-body-md-font-weight: 400;*/
+/*  --typography-body-md-line-height: 1.5;*/
+/*  --typography-body-md-letter-spacing: 0px;*/
+
+/*  --typography-body-sm-font-family: 'SF Pro Text';*/
+/*  --typography-body-sm-font-size: 14px;*/
+/*  --typography-body-sm-font-weight: 400;*/
+/*  --typography-body-sm-line-height: 1.5;*/
+/*  --typography-body-sm-letter-spacing: 0px;*/
+
+/*  --typography-label-md-font-family: 'SF Pro Text';*/
+/*  --typography-label-md-font-size: 14px;*/
+/*  --typography-label-md-font-weight: 500;*/
+/*  --typography-label-md-line-height: 1.4;*/
+/*  --typography-label-md-letter-spacing: 0px;*/
+
+/*  --typography-label-sm-font-family: 'SF Pro Text';*/
+/*  --typography-label-sm-font-size: 12px;*/
+/*  --typography-label-sm-font-weight: 500;*/
+/*  --typography-label-sm-line-height: 1.4;*/
+/*  --typography-label-sm-letter-spacing: 0px;*/
+
+  /* Shadows */
+  --shadow-sm: 0px 1px 3px 0px #0000000d;
+  --shadow-md: 0px 4px 12px 0px #00000014;
+  --shadow-lg: 0px 8px 24px 0px #0000001a;
+}
