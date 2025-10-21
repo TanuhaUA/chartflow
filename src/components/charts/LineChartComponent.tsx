@@ -1,34 +1,13 @@
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, LabelList } from 'recharts';
+import { getPalette } from '../../utils/getPalette';
 import type { ChartDataObject, ChartParams } from '../../types';
-
-// const data = [
-//   {
-//     name: 'Full-Stack Engineer',
-//     percentage: '4',
-//   },
-//   {
-//     name: 'Front-End Engineer',
-//     percentage: '11',
-//   },
-//   {
-//     name: 'Front-End Dev',
-//     percentage: '17',
-//   },
-//   {
-//     name: 'Frontend Dev',
-//     percentage: '19',
-//   },
-//   {
-//     name: 'Other',
-//     percentage: '49',
-//   },
-// ];
 
 type LineChartComponentProps = ChartParams & {
   data: ChartDataObject,
 };
 
 export const LineChartComponent = ({
+  chartTheme,
   reverseAxis,
   showAxis,
   showAxisTicks,
@@ -36,22 +15,23 @@ export const LineChartComponent = ({
   showValues,
   data,
 }: LineChartComponentProps) => {
+  const {
+    bgColor,
+    axesStroke,
+    lineColor,
+  } = getPalette(chartTheme);
+
   return (
     <LineChart
-      style={{ background: '#000723' }}
+      style={{ background: bgColor }}
       width={800} height={400} data={data.values}
       responsive
       margin={{ top: 50, right: 30, left: 20, bottom: 50 }}
     >
-      {/*<defs>*/}
-      {/*  <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">*/}
-      {/*    <feDropShadow dx="2" dy="2" stdDeviation="2" floodColor="#000" floodOpacity="0.3" />*/}
-      {/*  </filter>*/}
-      {/*</defs>*/}
       {showGrid && <CartesianGrid strokeDasharray="2 2" />}
       <XAxis
         dataKey={reverseAxis ? data.yAxis : data.xAxis}
-        stroke="#0caff8"
+        stroke={axesStroke}
         hide={!showAxis}
         tick={showAxisTicks}
         tickLine={showAxisTicks}
@@ -59,7 +39,7 @@ export const LineChartComponent = ({
         tickMargin={20}
       />
       <YAxis
-        stroke="#0caff8"
+        stroke={axesStroke}
         hide={!showAxis}
         tick={showAxisTicks}
         tickLine={showAxisTicks}
@@ -69,8 +49,8 @@ export const LineChartComponent = ({
       <Line
         dataKey={reverseAxis ? data.xAxis : data.yAxis}
         type="monotone"
-        dot={{ stroke: '#0caff8', strokeWidth: 1, fill: '#1d54e7' }}
-        stroke="#1d54e7"
+        dot={{ stroke: axesStroke, strokeWidth: 1, fill: lineColor }}
+        stroke={lineColor}
         strokeWidth={3}
       >
         {
@@ -79,7 +59,7 @@ export const LineChartComponent = ({
               dataKey={reverseAxis ? data.xAxis : data.yAxis}
               position="top"
               offset={20}
-              fill="#0caff8"
+              fill={axesStroke}
             />
           )
         }

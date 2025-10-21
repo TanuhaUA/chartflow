@@ -1,4 +1,5 @@
 import { PieChart, Pie, LabelList } from 'recharts';
+import { getPalette } from '../../utils/getPalette';
 import type { ChartDataObject, ChartParams } from '../../types';
 
 type PieChartComponentProps = ChartParams & {
@@ -6,13 +7,21 @@ type PieChartComponentProps = ChartParams & {
 };
 
 export const PieChartComponent = ({
+  chartTheme,
   showValues,
   data,
 }: PieChartComponentProps) => {
+  const {
+    bgColor,
+    axesStroke,
+    gradientBottom,
+    gradientTop,
+  } = getPalette(chartTheme);
+
   return (
     <PieChart
       style={{
-        background: '#000723',
+        background: bgColor,
         maxWidth: '500px',
         aspectRatio: 1,
       }}
@@ -21,8 +30,8 @@ export const PieChartComponent = ({
     >
       <defs>
         <linearGradient id="colorGradient" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#01adf6" stopOpacity={1} />
-          <stop offset="100%" stopColor="#051e70" stopOpacity={1} />
+          <stop offset="0%" stopColor={gradientTop} stopOpacity={1} />
+          <stop offset="100%" stopColor={gradientBottom} stopOpacity={1} />
         </linearGradient>
       </defs>
       <Pie
@@ -30,12 +39,12 @@ export const PieChartComponent = ({
         dataKey={data.yAxis}
         nameKey={data.xAxis}
         fill="url(#colorGradient)"
-        stroke="#000723"
+        stroke={axesStroke}
         label={showValues}
       >
         {
           showValues && (
-            <LabelList dataKey={data.xAxis} position="top" offset={10} fill="#0caff8" />
+            <LabelList dataKey={data.xAxis} position="top" offset={10} fill={axesStroke} />
           )
         }
       </Pie>

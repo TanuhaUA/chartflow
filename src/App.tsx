@@ -4,7 +4,8 @@ import { Footer } from './components/Footer';
 import { SettingsPanel } from './components/SettingsPanel';
 import { ChartView } from './components/ChartView';
 import { parseCsv } from './utils/parseCsv';
-import type { ChartDataObject, ChartType } from './types';
+import { DEFAULT_THEME } from './const';
+import type { ChartDataObject, ChartTheme, ChartType } from './types';
 
 function App() {
   const [data, setData] = useState<ChartDataObject>({
@@ -18,7 +19,8 @@ function App() {
   const [showGrid, setShowGrid] = useState(false);
   const [showValues, setShowValues] = useState(false);
 
-  const [chartType, setChartType] = useState<ChartType>('Bar chart');
+  const [chartTheme, setChartTheme] = useState<ChartTheme>(DEFAULT_THEME);
+  const [chartType, setChartType] = useState<ChartType>('Line chart');
 
   const onCsvChange = (csv: string) => {
     setData(parseCsv(csv));
@@ -48,6 +50,11 @@ function App() {
     setChartType(type);
   };
 
+
+  const onChartThemeChange = (theme: ChartTheme) => {
+    setChartTheme(theme);
+  };
+
   return (
     <div className="content">
       <Header />
@@ -55,6 +62,7 @@ function App() {
         <SettingsPanel
           error={data.error}
           chartType={chartType}
+          chartTheme={chartTheme}
           handleDataChange={onCsvChange}
           reverseAxis={reverseAxis}
           showAxis={showAxis}
@@ -67,8 +75,9 @@ function App() {
           handleShowGridlinesChange={onShowGridlinesChange}
           handleShowValuesChange={onShowValuesChange}
           handleChartTypeChange={onChartTypeChange}
+          handleChartThemeChange={onChartThemeChange}
         />
-        <ChartView data={data} params={{ reverseAxis, showAxis, showAxisTicks, showGrid, showValues }} chartType={chartType} />
+        <ChartView data={data} params={{ chartTheme, reverseAxis, showAxis, showAxisTicks, showGrid, showValues }} chartType={chartType} />
         {/*<img src="/02-10-2025.png" alt="chart" width={500} />*/}
       </main>
       <Footer />

@@ -4,6 +4,7 @@ export type ChartParams = {
   showAxis: boolean,
   showAxisTicks: boolean,
   showValues: boolean,
+  chartTheme: ChartTheme,
 };
 
 export type ChartViewProps = {
@@ -31,11 +32,11 @@ export const chartTypes = [
 
 export type ChartType = typeof chartTypes[number];
 
-export const chartTheme = [
-  'Light',
+export const chartThemes = [
   'Dark',
+  'Light',
   'Pastel',
   'Vivid',
 ] as const;
 
-export type ChartTheme = typeof chartTheme[number];
+export type ChartTheme = typeof chartThemes[number];

@@ -15,7 +15,6 @@ export const ChartView = ({ data, params, chartType }: ChartViewProps) => {
 
   return (
     <section className="container block">
-      <h2 className="subtitle">Chart</h2>
       <div className="info">
         Please take a screenshot to use this chart. Image download coming soon.
       </div>

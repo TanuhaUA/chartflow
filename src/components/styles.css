@@ -59,6 +59,34 @@
   color: var(--colors-text-secondary);
 }
 
+.settingsPanel {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 0 var(--spacing-md);
+}
+
+.settingsPanel__csvArea {
+  flex-grow: 1;
+  width: 50%;
+  min-width: 500px;
+}
+
+.settingsPanel__settings {
+  flex-grow: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  width: 40%;
+  padding: var(--spacing-md) 0;
+}
+
+.settingsPanel__checkboxes {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 .settingsPanel__textarea {
   width: 100%;
   min-height: 100px;
@@ -75,19 +103,17 @@
 }
 
 .settingsPanel__info {
-  margin: var(--spacing-xs) 0 var(--spacing-md);
-}
-
-.settingsPanel__settings {
   display: flex;
   flex-wrap: wrap;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+  margin-top: var(--spacing-xs);
 }
 
-.settingsPanel__setting:not(:last-child) {
+.settingsPanel__setting {
   margin-right: var(--spacing-md);
+}
+
+.settingsPanel__setting label {
+  cursor: pointer;
 }
 
 .chartPreview {
@@ -96,6 +122,7 @@
   align-items: center;
   min-height: 300px;
   margin-top: var(--spacing-md);
+  padding: var(--spacing-md) 0;
   color: var(--colors-text-secondary);
   border-radius: var(--radius-md);
   background-color: var(--colors-background-secondary);
@@ -105,4 +132,8 @@
   margin-top: var(--spacing-xl);
   text-align: center;
   box-shadow: 0 -1px 3px 0 #c6cdd7;
+}
+
+.fieldset {
+  border-radius: var(--radius-md);
 }

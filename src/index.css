@@ -40,8 +40,8 @@ body {
   min-height: 100vh;
 }
 
-*:focus,
-*:focus-visible {
+textarea:focus,
+textarea:focus-visible {
   outline: var(--colors-primary-hover) solid 1px;
   box-shadow: 0 0 3px 0 var(--colors-primary-hover);
 }
