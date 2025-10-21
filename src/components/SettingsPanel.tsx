@@ -1,67 +1,74 @@
 import * as React from 'react';
-import type { ChartProps } from '../types';
+import type { ChartParams, ChartType } from '../types';
+import  { chartTypes, chartTheme } from '../types';
 
-const { useState } = React;
-
-const chartTypes = [
-  'Line chart',
-  'Bar chart',
-  'Pie chart',
-];
-
-const chartTheme = [
-  'Light',
-  'Dark',
-  'Pastel',
-  'Vivid',
-];
+const textareaPlaceholder = `Paste CSV content here. For example:
+month,number
+June,10
+July,30
+August,20
+`;
 
 type SettingsPanelProps = {
+  error: string | undefined,
+  chartType: ChartType,
   handleDataChange: (csv: string) => void,
+  handleChartTypeChange: (value: ChartType) => void,
+  handleReverseAxisChange: () => void,
   handleShowAxisChange: () => void,
   handleShowAxisTicksChange: () => void,
+  handleShowValuesChange: () => void,
   handleShowGridlinesChange: () => void,
-} & ChartProps;
+} & ChartParams;
 
 export const SettingsPanel = ({
-  showGrid,
+  error,
+  chartType,
+  reverseAxis,
   showAxis,
   showAxisTicks,
+  showGrid,
+  showValues,
   handleDataChange,
+  handleChartTypeChange,
+  handleReverseAxisChange,
   handleShowAxisChange,
   handleShowAxisTicksChange,
   handleShowGridlinesChange,
+  handleShowValuesChange,
 }: SettingsPanelProps) => {
-  const [isBarChart, setIsBarChart] = useState(false);
-
   const onTextareaChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     handleDataChange(event.target.value);
   };
 
   const onChartTypeChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setIsBarChart(event.target.value === 'Bar chart');
+    handleChartTypeChange(event.target.value as ChartType);
   };
 
   return (
     <section className="container block settingsPanel">
       <div>
+        <div className="settingsPanel__error error">
+          {
+            error || ' '
+          }
+        </div>
         <textarea
           className="settingsPanel__textarea"
-          placeholder="Paste CSV content here"
+          placeholder={textareaPlaceholder}
           name="csv"
           id="csv"
           cols={30}
           rows={5}
           onChange={onTextareaChange}
         ></textarea>
-        <div className="settingsPanel__info">
-          To export CSV: File → Save As → CSV (comma delimited)
+        <div className="settingsPanel__info info">
+          To save data from your spreadsheet as CSV: File → Save As (or Download) → CSV (Comma Delimited)
         </div>
       </div>
       <ul className="settingsPanel__settings">
         <li className="settingsPanel__setting">
-          <select name="chartType" id="chartType" onChange={onChartTypeChange}>
-            <option value="" disabled>Chart Type</option>
+          <select name="chartType" id="chartType" onChange={onChartTypeChange} value={chartType}>
             {
               chartTypes.map((type) => {
                 return (
@@ -84,6 +91,10 @@ export const SettingsPanel = ({
           </select>
         </li>
         <li className="settingsPanel__setting">
+          <input type="checkbox" id="reverseAxis" checked={reverseAxis} onChange={handleReverseAxisChange} />
+          <label htmlFor="reverseAxis">Reverse axis</label>
+        </li>
+        <li className="settingsPanel__setting">
           <input type="checkbox" id="showAxis" checked={showAxis} onChange={handleShowAxisChange} />
           <label htmlFor="showAxis">Show axis</label>
         </li>
@@ -95,14 +106,10 @@ export const SettingsPanel = ({
           <input type="checkbox" id="showGridlines" checked={showGrid} onChange={handleShowGridlinesChange} />
           <label htmlFor="showGridlines">Show gridlines</label>
         </li>
-        {
-          isBarChart && (
-            <li className="settingsPanel__setting">
-              <input type="checkbox" id="showValuesAboveBars" />
-              <label htmlFor="showValuesAboveBars">Show values above bars</label>
-            </li>
-          )
-        }
+        <li className="settingsPanel__setting">
+          <input type="checkbox" id="showValuesAboveBars" checked={showValues} onChange={handleShowValuesChange} />
+          <label htmlFor="showValuesAboveBars">Show values on the chart</label>
+        </li>
       </ul>
     </section>
   );
