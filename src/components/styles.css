@@ -34,6 +34,7 @@
   margin: 0 0 0 var(--spacing-md);
   font-family: 'SF Pro Display', Roboto, Arial, sans-serif;
   font-size: 2rem;
+  line-height: 1.2;
   font-weight: 600;
   color: var(--colors-text-primary);
 }
@@ -67,13 +68,14 @@
 
 .settingsPanel__settings {
   display: flex;
+  flex-wrap: wrap;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.settingsPanel__setting:not(:first-child) {
-  margin-left: var(--spacing-md);
+.settingsPanel__setting:not(:last-child) {
+  margin-right: var(--spacing-md);
 }
 
 .chartPreview {
@@ -89,5 +91,5 @@
 .footer {
   margin-top: var(--spacing-xl);
   text-align: center;
-  box-shadow: 0 -1px 3px 0 #0000000d;
+  box-shadow: 0 -1px 3px 0 #c6cdd7;
 }

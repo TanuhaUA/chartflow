@@ -4,7 +4,8 @@
   --colors-primary-hover: #4f46e5;
 /*  --colors-secondary: #8b5cf6;*/
 /*  --colors-background: #ffffff;*/
-  --colors-background-secondary: #f8fafc;
+/*  --colors-background-secondary: #f8fafc;*/
+  --colors-background-secondary: #ebf4fd;
 /*  --colors-background-dark: #0f172a;*/
 /*  --colors-background-dark-secondary: #1e293b;*/
 /*  --colors-surface: #ffffff;*/
@@ -22,13 +23,13 @@
 
 /*  !* Chart colors *!*/
   --colors-chart-blue: #3b82f6;
-/*  --colors-chart-green: #10b981;*/
-/*  --colors-chart-purple: #8b5cf6;*/
-/*  --colors-chart-orange: #f59e0b;*/
-/*  --colors-chart-red: #ef4444;*/
-/*  --colors-chart-teal: #14b8a6;*/
-/*  --colors-chart-pink: #ec4899;*/
-/*  --colors-chart-indigo: #6366f1;*/
+  --colors-chart-green: #10b981;
+  --colors-chart-purple: #8b5cf6;
+  --colors-chart-orange: #f59e0b;
+  --colors-chart-red: #ef4444;
+  --colors-chart-teal: #14b8a6;
+  --colors-chart-pink: #ec4899;
+  --colors-chart-indigo: #6366f1;
 
 /*  --colors-success: #10b981;*/
 /*  --colors-warning: #f59e0b;*/
@@ -117,7 +118,7 @@
 /*  --typography-label-sm-letter-spacing: 0px;*/
 
   /* Shadows */
-  --shadow-sm: 0px 1px 3px 0px #0000000d;
-  --shadow-md: 0px 4px 12px 0px #00000014;
-  --shadow-lg: 0px 8px 24px 0px #0000001a;
+  --shadow-sm: 0px 1px 3px 0px #c6cdd7;
+  --shadow-md: 0px 4px 12px 0px #c6cdd7;
+  --shadow-lg: 0px 8px 24px 0px #c6cdd7;
 }
