@@ -3,6 +3,7 @@ import * as React from 'react';
 const { memo } = React;
 
 const textareaPlaceholder = `Paste CSV content here. For example:
+
 month,number
 June,10
 July,30
