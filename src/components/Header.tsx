@@ -1,5 +1,4 @@
 import { memo } from 'react';
-import './styles.css';
 
   export const Header = memo(() => {
   return (
