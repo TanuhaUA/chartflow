@@ -8,10 +8,11 @@ type LineChartComponentProps = ChartParams & {
 
 export const BangChanComponent = ({
   chartTheme,
-  reverseAxis,
-  showAxis,
-  showAxisTicks,
-  showGrid,
+  swapAxes,
+  showAxes,
+  showAxesLabels,
+  showVerticalGrid,
+  showHorizontalGrid,
   showValues,
   data,
 }: LineChartComponentProps) => {
@@ -24,9 +25,11 @@ export const BangChanComponent = ({
 
   return (
     <BarChart
-      style={{ background: bgColor }}
-      width={800} height={400} data={data.values}
+      data={data.values}
+      height={400}
+      width="100%"
       responsive
+      style={{ background: bgColor, maxWidth: '900px' }}
       margin={{ top: 50, right: 30, left: 20, bottom: 50 }}
     >
       <defs>
@@ -35,32 +38,37 @@ export const BangChanComponent = ({
           <stop offset="100%" stopColor={gradientBottom} stopOpacity={1} />
         </linearGradient>
       </defs>
-      {showGrid && <CartesianGrid strokeDasharray="3 3" />}
+      <CartesianGrid
+        strokeDasharray="3 3"
+        horizontal={showHorizontalGrid}
+        vertical={showVerticalGrid}
+        strokeOpacity={0.4}
+      />
       <XAxis
-        dataKey={reverseAxis ? data.yAxis : data.xAxis}
+        dataKey={swapAxes ? data.yAxis : data.xAxis}
         stroke={axesStroke}
-        hide={!showAxis}
-        tick={showAxisTicks}
-        tickLine={showAxisTicks}
+        hide={!showAxes}
+        tick={showAxesLabels}
+        tickLine={showAxesLabels}
         tickSize={-6}
         tickMargin={20}
       />
       <YAxis
         stroke={axesStroke}
-        hide={!showAxis}
-        tick={showAxisTicks}
-        tickLine={showAxisTicks}
+        hide={!showAxes}
+        tick={showAxesLabels}
+        tickLine={showAxesLabels}
         tickSize={-6}
         tickMargin={20}
       />
       <Bar
-        dataKey={reverseAxis ? data.xAxis : data.yAxis}
-        radius={[15, 15, 0, 0]}
+        dataKey={swapAxes ? data.xAxis : data.yAxis}
+        radius={[10, 10, 0, 0]}
         fill="url(#colorGradient)"
       >
         {
           showValues && (
-            <LabelList dataKey={reverseAxis ? data.xAxis : data.yAxis} position="top" offset={10} fill={axesStroke} />
+            <LabelList dataKey={swapAxes ? data.xAxis : data.yAxis} position="top" offset={10} fill={axesStroke} />
           )
         }
       </Bar>

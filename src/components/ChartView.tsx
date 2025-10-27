@@ -14,7 +14,7 @@ export const ChartView = ({ data, params, chartType }: ChartViewProps) => {
   const Chart = charts[chartType] || LineChartComponent;
 
   return (
-    <section className="container block">
+    <section className="container block chartView">
       <div className="info">
         Please take a screenshot to use this chart. Image download coming soon.
       </div>

@@ -1,8 +1,9 @@
 export type ChartParams = {
-  reverseAxis: boolean,
-  showGrid: boolean,
-  showAxis: boolean,
-  showAxisTicks: boolean,
+  swapAxes: boolean,
+  showVerticalGrid: boolean,
+  showHorizontalGrid: boolean,
+  showAxes: boolean,
+  showAxesLabels: boolean,
   showValues: boolean,
   chartTheme: ChartTheme,
 };
@@ -12,6 +13,17 @@ export type ChartViewProps = {
   params: ChartParams,
   chartType: ChartType,
 };
+
+export type SettingsInitialValues = Omit<ChartParams, 'chartTheme'>;
+
+export type SettingsCheckbox = {
+  id: keyof SettingsInitialValues,
+  label: string,
+  initialValue: boolean,
+  forbiddenChartTypes: string[],
+};
+
+export type SettingsCheckboxes = SettingsCheckbox[];
 
 export type ChartValue = {
   [key: string]: string | number,

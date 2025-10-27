@@ -20,13 +20,9 @@ export const PieChartComponent = ({
 
   return (
     <PieChart
-      style={{
-        background: bgColor,
-        maxWidth: '500px',
-        aspectRatio: 1,
-      }}
       width={400}
       height={400}
+      style={{ background: bgColor }}
     >
       <defs>
         <linearGradient id="colorGradient" x1="0" y1="0" x2="0" y2="1">
@@ -39,7 +35,7 @@ export const PieChartComponent = ({
         dataKey={data.yAxis}
         nameKey={data.xAxis}
         fill="url(#colorGradient)"
-        stroke={axesStroke}
+        stroke={bgColor}
         label={showValues}
       >
         {

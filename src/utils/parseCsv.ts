@@ -25,7 +25,7 @@ export const parseCsv = (csv: string = '') => {
     .filter(Boolean);
 
   if (lines.length < 2) {
-    dataObject.error = 'CSV must contain a header and at least one data row';
+    dataObject.error = 'CSV must include a header and one data row';
   } else {
     const [axisNamesLine, ...valuesLines] = lines;
     const [xAxis, yAxis] = getXandY(axisNamesLine);
@@ -45,10 +45,6 @@ export const parseCsv = (csv: string = '') => {
       values,
     }
   }
-
-
-  console.log(lines);
-  console.log(dataObject);
 
   return dataObject;
 };

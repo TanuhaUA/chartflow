@@ -8,10 +8,11 @@ type LineChartComponentProps = ChartParams & {
 
 export const LineChartComponent = ({
   chartTheme,
-  reverseAxis,
-  showAxis,
-  showAxisTicks,
-  showGrid,
+  swapAxes,
+  showAxes,
+  showAxesLabels,
+  showVerticalGrid,
+  showHorizontalGrid,
   showValues,
   data,
 }: LineChartComponentProps) => {
@@ -23,31 +24,38 @@ export const LineChartComponent = ({
 
   return (
     <LineChart
-      style={{ background: bgColor }}
-      width={800} height={400} data={data.values}
+      data={data.values}
+      width="100%"
+      height={400}
       responsive
-      margin={{ top: 50, right: 30, left: 20, bottom: 50 }}
+      style={{ background: bgColor, maxWidth: '900px' }}
+      margin={{ top: 50, right: 50, left: 20, bottom: 50 }}
     >
-      {showGrid && <CartesianGrid strokeDasharray="2 2" />}
+      <CartesianGrid
+        strokeDasharray="3 3"
+        horizontal={showHorizontalGrid}
+        vertical={showVerticalGrid}
+        strokeOpacity={0.4}
+      />
       <XAxis
-        dataKey={reverseAxis ? data.yAxis : data.xAxis}
+        dataKey={swapAxes ? data.yAxis : data.xAxis}
         stroke={axesStroke}
-        hide={!showAxis}
-        tick={showAxisTicks}
-        tickLine={showAxisTicks}
+        hide={!showAxes}
+        tick={showAxesLabels}
+        tickLine={showAxesLabels}
         tickSize={-6}
         tickMargin={20}
       />
       <YAxis
         stroke={axesStroke}
-        hide={!showAxis}
-        tick={showAxisTicks}
-        tickLine={showAxisTicks}
+        hide={!showAxes}
+        tick={showAxesLabels}
+        tickLine={showAxesLabels}
         tickSize={-6}
         tickMargin={20}
       />
       <Line
-        dataKey={reverseAxis ? data.xAxis : data.yAxis}
+        dataKey={swapAxes ? data.xAxis : data.yAxis}
         type="monotone"
         dot={{ stroke: axesStroke, strokeWidth: 1, fill: lineColor }}
         stroke={lineColor}
@@ -56,7 +64,7 @@ export const LineChartComponent = ({
         {
           showValues && (
             <LabelList
-              dataKey={reverseAxis ? data.xAxis : data.yAxis}
+              dataKey={swapAxes ? data.xAxis : data.yAxis}
               position="top"
               offset={20}
               fill={axesStroke}

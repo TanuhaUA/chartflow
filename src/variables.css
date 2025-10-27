@@ -4,13 +4,13 @@
   --colors-primary-hover: #4f46e5;
 /*  --colors-secondary: #8b5cf6;*/
 /*  --colors-background: #ffffff;*/
-/*  --colors-background-secondary: #f8fafc;*/
-  --colors-background-secondary: #ebf4fd;
+  --colors-background-secondary: #f8fafc;
+  --colors-background-input: #ebf4fd;
 /*  --colors-background-dark: #0f172a;*/
 /*  --colors-background-dark-secondary: #1e293b;*/
 /*  --colors-surface: #ffffff;*/
 /*  --colors-surface-dark: #1e293b;*/
-/*  --colors-border: #e2e8f0;*/
+  --colors-border: #e2e8f0;
 /*  --colors-border-dark: #334155;*/
 
   /* Text */

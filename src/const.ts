@@ -1,5 +1,3 @@
-import { chartThemes } from './types.ts';
-
 export const DEFAULT_THEME = 'Dark';
 
 export const COLOR_PALETTE = {
